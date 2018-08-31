@@ -6,5 +6,7 @@
   "repository": "https://github.com/sujilnt/WeatherDataAutomation.git",
   "author": "\"sujil anto thomas\"",
   "license": "MIT",
-  "private": null
+  "dependencies": {
+    "puppeteer": "^1.7.0"
+  }
 }
