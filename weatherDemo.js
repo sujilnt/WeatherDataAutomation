@@ -12,8 +12,8 @@ m.forEach((weatherData)=>{
             weatherFunc({
                 siteName:weatherData.SiteName,
                 postCode:weatherData.PostCode,
-                emailId: "sujil@optimisedbuildings.com",
-                password: "optimised1234",
+                emailId: "you email",
+                password: "password",
                 location: "Europe/London",
                 //launchSettings:{devtools: true,// add anycustomised settings according pupeeteer}
             },count);
