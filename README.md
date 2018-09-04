@@ -11,12 +11,12 @@ First, install `commands`:
 $ npm i weather-data-automation --save -dev
 ```
 
-Once installed create a javascript file, Once 
+Once installed create a javascript file weatherDemo.js, Once 
 ```sh
 const {weatherFunc} = require("weather-data-automation");
 weatherFunc({
-                siteName:, // 
-                postCode:weatherData.PostCode,
+                siteName: "siteName1", // siteNames 
+                postCode:"postCode 1 " // postCode1,
                 emailId: "your email id",
                 password: "password of your email id ",
                 timezone: "time zones name", //default:Europe/London
@@ -29,3 +29,10 @@ weatherFunc({
                })
                
 ```
+
+## To run in Terminal
+``` sh
+node weatherDemo.js
+```
+
+Demo code weatherDemo.js , is put up on the Repo for  more Reference. Feel free to play with them . 
