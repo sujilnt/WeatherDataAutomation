@@ -10,6 +10,8 @@ const weatherFunc = (dataObj, count)=>{
     const _viewport = userDataObj.viewport || {width: 1200, height: 1000} ;
     const _launchSetting =  userDataObj.launchSettings||{headless: false, devtools: false};
     let _post= userDataObj.postCode;
+    const _url=userDataObj.url;
+    const _appSelector= userDataObj.clientNameSelector;
     let counter=count;
     let debugging= userDataObj.debug;
 
@@ -19,7 +21,7 @@ const weatherFunc = (dataObj, count)=>{
     puppeteer.launch(_launchSetting).then(async browser => {
         // same as puppeteer
         const page = await browser.newPage();
-        await page.goto('https://optimisedbuildings.dexcell.com/login.htm');   // going to the url the
+        await page.goto(_url);   // going to the url the
         if(counter !==  0 ){
             await page.waitFor(15000);
         }
@@ -28,8 +30,8 @@ const weatherFunc = (dataObj, count)=>{
         await page.type("input[type='password']", _password);
         await page.click("button.btn"); // Click the login button
         await page.waitFor(1000);
-        await page.waitForSelector(".selection_container[id='3786']"); // waiting for dom element that has morrission url
-        await page.click(".selection_container[id='3786']");  // click on the morrission url
+        await page.waitForSelector(_appSelector); // waiting for dom element that has morrission url
+        await page.click(_appSelector);  // click on the morrission url
         // once selected we goto the setting  in the top menu ..
         await page.waitForSelector("#top-menu");  // wait until menu contains top menu
         await page.click("#config-item");  // clicking on the setting Icon button

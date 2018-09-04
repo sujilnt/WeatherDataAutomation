@@ -15,7 +15,9 @@ m.forEach((weatherData)=>{
                 emailId: "you email",
                 password: "password",
                 location: "Europe/London",
-                //launchSettings:{devtools: true,// add anycustomised settings according pupeeteer}
+                url:"https://optimisedbuildings.dexcell.com/login.htm",
+                clientNameSelector:".selection_container[id='3786']",
+                //launchSettings:{ devtools: true,// add any customised settings according pupeeteer}
             },count);
             weatherData["Done"] = "TRUE";
             count+=1;
