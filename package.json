@@ -1,6 +1,6 @@
 {
   "name": "weather-data-automation",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A node script to automate adding of weather Data in DEXMA or DEXCELL .",
   "main": "weather.js",
   "repository": "https://github.com/sujilnt/WeatherDataAutomation.git",
