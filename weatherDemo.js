@@ -14,7 +14,8 @@ m.forEach((weatherData)=>{
                 postCode:weatherData.PostCode,
                 emailId: "you email",
                 password: "password",
-                location: "Europe/London",
+                timezone: "Europe/London",
+                location:"united Kingdom",
                 url:"https://optimisedbuildings.dexcell.com/login.htm",
                 clientNameSelector:".selection_container[id='3786']",
                 //launchSettings:{ devtools: true,// add any customised settings according pupeeteer}

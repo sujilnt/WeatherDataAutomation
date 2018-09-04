@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 const weatherFunc = (dataObj, count)=>{
     const userDataObj= dataObj;
     const _email= userDataObj.emailId.trim();
-    const _location= userDataObj.location;
+    const _location= userDataObj.location.toString();
     const _password= userDataObj.password.trim();
     let _siteName= userDataObj.siteName;
     let _time= userDataObj.timezone;
@@ -54,7 +54,7 @@ const weatherFunc = (dataObj, count)=>{
         await page.type("#name", _siteName);
 
         await page.waitForSelector(".select2-input");
-        await page.type(".select2-input", "united kingdom");
+        await page.type(".select2-input", _location);
         await page.click(".select2-result-label");
         // dropdown code
         await page.waitForSelector("#postcode");
@@ -65,12 +65,13 @@ const weatherFunc = (dataObj, count)=>{
         await page.waitForSelector("#s2id_select-timezone");
         await page.click("#s2id_select-timezone");
         await page.waitForSelector("#select-timezone");
-        await page.select("#select-timezone", _location);
-        await page.waitFor(4000);
+        await page.select("#select-timezone", _time);
+        await page.waitFor(2000);
         // for button
-        await page.waitForSelector(".submit_ccmbr");
-        await page.type(" #s2id_select-timezone > .select2-drop .select2-search .select2-input", _time);
-        await page.click(".submit_ccmbr");
+        //await page.type(" #s2id_select-timezone > .select2-drop .select2-search .select2-input", _time);
+        //await page.click(".select2-results .select2-result-label");
+        await page.waitForSelector(".submit_ccmbr[type='submit']");
+        await page.click(".submit_ccmbr[type='submit']");
 
         await page.waitForSelector("#devices-tab");
         await page.click("#devices-tab");
