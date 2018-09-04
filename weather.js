@@ -66,7 +66,7 @@ const weatherFunc = (dataObj, count)=>{
         await page.click("#s2id_select-timezone");
         await page.waitForSelector("#select-timezone");
         await page.select("#select-timezone", _time);
-        await page.waitFor(4000);
+        await page.waitFor(3000);
         // for button
         //await page.type(" #s2id_select-timezone > .select2-drop .select2-search .select2-input", _time);
         //await page.click(".select2-results .select2-result-label");
