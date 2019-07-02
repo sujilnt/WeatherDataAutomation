@@ -1,8 +1,8 @@
 const fs = require('fs');
 //const {weatherFunc} = require("weather-data-automation");
-const {weatherFunc} = require("./deletelocation");
+const {weatherFunc} = require("./addReferenceMeters");
 const m = JSON.parse(fs.readFileSync('params.json').toString());
-const NO_OF_OPERATION = 2;
+const NO_OF_OPERATION = 3;
 let count =0;
 m.forEach((weatherData)=>{
     if(weatherData["Done"] ==="TRUE"){
