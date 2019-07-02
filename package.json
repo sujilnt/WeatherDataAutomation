@@ -7,6 +7,12 @@
   "author": "\"sujil anto thomas\"",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^1.7.0"
+    "puppeteer": "^1.7.0",
+    "weather-data-automation": "^1.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "node-fetch": "^2.6.0"
   }
 }
