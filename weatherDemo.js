@@ -1,7 +1,8 @@
 const fs = require('fs');
-const {weatherFunc} = require("weather-data-automation");
-const m = JSON.parse(fs.readFileSync('data.json').toString());
-const NO_OF_OPERATION = 4;
+//const {weatherFunc} = require("weather-data-automation");
+const {weatherFunc} = require("./deletelocation");
+const m = JSON.parse(fs.readFileSync('params.json').toString());
+const NO_OF_OPERATION = 2;
 let count =0;
 m.forEach((weatherData)=>{
     if(weatherData["Done"] ==="TRUE"){
@@ -11,9 +12,8 @@ m.forEach((weatherData)=>{
         if(count< NO_OF_OPERATION){
             weatherFunc({
                 siteName:weatherData.SiteName,
-                postCode:weatherData.PostCode,
-                emailId: "you email",
-                password: "password",
+                emailId: "sujil@optimisedbuildings.com" ,
+                password: "optimised1234",
                 timezone: "Europe/London",
                 location:"united Kingdom",
                 url:"https://optimisedbuildings.dexcell.com/login.htm",
@@ -26,7 +26,7 @@ m.forEach((weatherData)=>{
     }
 
 });
-fs.writeFile('data.json', JSON.stringify(m),(err,data) =>{
+fs.writeFile('params.json', JSON.stringify(m),(err,data) =>{
     if (err) console.log(err);
     console.log("Successfully Written to File.");
 });
